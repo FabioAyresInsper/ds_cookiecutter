@@ -1,0 +1,28 @@
+#YAML 1.2
+#---
+
+project : "Language Models"
+
+config : 
+  lr : 0.001
+  weight_decay: 0.0
+  architecture_name: RNN+MLP with SentencePiece Tokenizer
+  dataset: IMDB
+  num_epochs: 500
+  batch_size : 1024
+  num_workers : 8
+  reduce_lr_ratio : 0.1
+  reduce_lr_patience : 3
+  early_stopping_patience : 10
+  seq_len : 15
+  dataset_path : /home/tiago/datasets/imdb.csv
+  vocabulary_size : 4000
+  sp_tokenizer_prefix : sp_model
+  embedding_dim : 50
+  n_latent : 60
+  num_layers : 2
+
+gpu_config :
+  max_gpus : 4 # Because we are so polite!
+  min_gpus : 1 # If I have less than this many GPUs, abort experiment!
+  max_power_to_allocate : 15 # Power (W) to consider a GPU idle. If GPU is not being used, USE IT!

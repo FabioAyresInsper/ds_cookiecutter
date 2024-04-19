@@ -1,0 +1,7 @@
+{
+    "project_name": "Data Science Project",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+    "author": "Anonymous",
+    "git_username": "anonymous",
+    "homepage": "https://github.com/{{ cookiecutter.git_username }}/{{ cookiecutter.project_slug }}"
+}
