@@ -12,3 +12,4 @@ scipy
 toml
 tqdm
 yapf
+-e package/
