@@ -1,4 +1,5 @@
 # pylint:disable=missing-docstring
+import subprocess
 from pathlib import Path
 
 
@@ -11,6 +12,10 @@ def main():
     with open('.env', 'w', encoding='utf8') as f:
         f.write(f'PROJECT_DIR={project_dir}\n')
         f.write(f'DATA_DIR={data_dir}\n')
+
+    subprocess.run(['git', 'init'], check=True)
+    subprocess.run(['git', 'add', '.'], check=True)
+    subprocess.run(['git', 'commit', '-m', 'Initial commit'], check=True)
 
 
 if __name__ == '__main__':
