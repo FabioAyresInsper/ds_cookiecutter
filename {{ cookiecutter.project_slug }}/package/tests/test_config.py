@@ -1,5 +1,5 @@
 # pylint: disable=missing-docstring,import-error
-from config import get_config
+import blablabla.config as cfg
 
 
 def test_config():
@@ -7,7 +7,7 @@ def test_config():
 
 
 def main():
-    config = get_config()
+    config = cfg.get_config()
     print(config)
 
 
