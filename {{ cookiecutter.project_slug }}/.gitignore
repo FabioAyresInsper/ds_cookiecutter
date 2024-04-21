@@ -1,9 +1,5 @@
 .vscode/
-.vector_cache
-sandbox/
-data_path/
-checkpoints/
-wandb/
+data/
 
 # Model snapshots
 *.pth
