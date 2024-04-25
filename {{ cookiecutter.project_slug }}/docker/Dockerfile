@@ -3,7 +3,7 @@
 #FROM pytorch/pytorch
 FROM python:3.11
 
-ARG USERNAME
+ARG USERNAME=user
 ARG PROJECT_NAME={{ cookiecutter.project_slug }}
 
 RUN useradd -m $USERNAME && apt-get update
