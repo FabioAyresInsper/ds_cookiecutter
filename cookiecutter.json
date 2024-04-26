@@ -1,7 +1,9 @@
 {
     "project_name": "Data Science Project",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+    "base_dev_environment": ["simple", "pytorch"],
     "author": "Anonymous",
     "git_username": "anonymous",
-    "homepage": "https://github.com/{{ cookiecutter.git_username }}/{{ cookiecutter.project_slug }}"
+    "homepage": "https://github.com/{{ cookiecutter.git_username }}/{{ cookiecutter.project_slug }}",
+    "_jinja2_env_vars": {"line_statement_prefix": "#%"}
 }
