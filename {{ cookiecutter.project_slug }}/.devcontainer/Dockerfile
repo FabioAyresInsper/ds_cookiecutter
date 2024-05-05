@@ -18,11 +18,11 @@ RUN useradd -m $USERNAME \
     && apt-get install -y coreutils \
     && apt-get install -y sudo \
     && usermod -aG sudo user \
-    && echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers \
-    && echo "PATH=$PATH:/home/$USERNAME/.local/bin" >> /home/$USERNAME/.bashrc
+    && echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 USER $USERNAME
 
 RUN mkdir /home/$USERNAME/$PROJECT_NAME
+RUN mkdir -p /home/$USERNAME/.local/bin
 
 WORKDIR /home/$USERNAME/$PROJECT_NAME

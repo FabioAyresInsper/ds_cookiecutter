@@ -14,18 +14,23 @@
 
 	"workspaceFolder": "/home/user/{{ cookiecutter.project_slug }}",
 
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"GitHub.copilot-chat",
+				"GitHub.copilot",
+				"ms-azuretools.vscode-docker",
+				"donjayamanne.githistory",
+				"ms-python.isort",
+				"ms-toolsai.jupyter",
+				"ms-python.vscode-pylance",
+				"ms-python.pylint",
+				"ms-python.python",
+				"eeyore.yapf",
+				"redhat.vscode-yaml"
+			]
+		}
+	},
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
-	// Uncomment the next line to run commands after the container is created.
-	"postCreateCommand": "pip install -r requirements.txt"
-
-	// Configure tool-specific properties.
-	// "customizations": {},
-
-	// Uncomment to connect as an existing user other than the container default. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "devcontainer"
+	"postCreateCommand": ["bash", "--login", ".devcontainer/post-create.sh"]
 }
