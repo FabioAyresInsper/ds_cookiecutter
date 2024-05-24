@@ -1,36 +1,40 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
 {
-	"name": "{{ cookiecutter.project_slug }}",
+    "name": "{{ cookiecutter.project_slug }}",
 
-	"build": {
-		// Sets the run context to one level up instead of the .devcontainer folder.
-		"context": "..",
-		// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
-		"dockerfile": "Dockerfile"
-	},
+    "runArgs": [
+        "--gpus=all"
+    ],
 
-	"workspaceMount": "source=${localWorkspaceFolder},target=/home/user/{{ cookiecutter.project_slug }},type=bind",
+    "build": {
+        // Sets the run context to one level up instead of the .devcontainer folder.
+        "context": "..",
+        // Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
+        "dockerfile": "Dockerfile"
+    },
 
-	"workspaceFolder": "/home/user/{{ cookiecutter.project_slug }}",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/user/{{ cookiecutter.project_slug }},type=bind",
 
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"GitHub.copilot-chat",
-				"GitHub.copilot",
-				"ms-azuretools.vscode-docker",
-				"donjayamanne.githistory",
-				"ms-python.isort",
-				"ms-toolsai.jupyter",
-				"ms-python.vscode-pylance",
-				"ms-python.pylint",
-				"ms-python.python",
-				"eeyore.yapf",
-				"redhat.vscode-yaml"
-			]
-		}
-	},
+    "workspaceFolder": "/home/user/{{ cookiecutter.project_slug }}",
 
-	"postCreateCommand": ["bash", "--login", ".devcontainer/post-create.sh"]
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "GitHub.copilot-chat",
+                "GitHub.copilot",
+                "ms-azuretools.vscode-docker",
+                "donjayamanne.githistory",
+                "ms-python.isort",
+                "ms-toolsai.jupyter",
+                "ms-python.vscode-pylance",
+                "ms-python.pylint",
+                "ms-python.python",
+                "eeyore.yapf",
+                "redhat.vscode-yaml"
+            ]
+        }
+    },
+
+    "postCreateCommand": ["bash", "--login", ".devcontainer/post-create.sh"]
 }

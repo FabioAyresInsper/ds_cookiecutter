@@ -15,8 +15,7 @@ ARG PROJECT_NAME={{ cookiecutter.project_slug }}
 RUN useradd -m $USERNAME \
     && apt-get update \
     && apt-get upgrade -y \
-    && apt-get install -y coreutils \
-    && apt-get install -y sudo \
+    && apt-get install -y coreutils sudo git gcc g++ make cmake \
     && usermod -aG sudo user \
     && echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
