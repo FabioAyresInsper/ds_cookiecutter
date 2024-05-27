@@ -32,7 +32,10 @@
                 "ms-python.python",
                 "eeyore.yapf",
                 "redhat.vscode-yaml"
-            ]
+            ],
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash"
+            }
         }
     },
 
